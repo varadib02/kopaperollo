@@ -5,6 +5,7 @@
 package feb;
 import java.lang.Math;
 import java.util.Scanner;
+import java.util.Random;
 /**
  *
  * @author User
@@ -26,7 +27,7 @@ public class Feb {
             boolean igazE;
             do
             {
-                System.out.println("Írd be a választásod Kő(1), Papír(2), Olló(3): ");
+                System.out.println("Írd be a választásod Kő, Papír, Olló: ");
                 Scanner tipp = new Scanner(System.in);
                 
                 userValasz = tipp.next();
@@ -37,9 +38,9 @@ public class Feb {
                 
             System.out.println("User választása: " + userValasz); 
                 
-            int min = 1;
-            int max = 3;
-            int rand = (int)(Math.random()*(max-min+1)+min);  
+            //int min = 1;
+            //int max = 3;
+            int rand = //(int)(Math.random()*(max-min+1)+min);  
             System.out.println("Gép mutat: " + rand);
             
             if(userValasz=="ko")userTippSzam=1;
@@ -52,15 +53,15 @@ public class Feb {
     public static String kopapirollo(Integer korok,Integer userValasz, Integer rand){
         if(rand == userValasz)
         {
-            return String.format("Döntetlen!");
+            return "Döntetlen!";
         }
         else if(rand==0 && userValasz==1 || rand==1 && userValasz==2 || rand==2 && userValasz==0)
         {
-            return String.format("User nyert!");
+            return "User nyert!";
         } 
         else
         {
-            return String.format("Gép nyert!");
+            return "Gép nyert!";
         }        
     }
     public static Boolean helyesE(String x){
